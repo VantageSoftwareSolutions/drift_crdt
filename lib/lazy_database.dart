@@ -90,6 +90,11 @@ class CrdtLazyDatabase extends QueryExecutor {
     }
   }
 
+  @override
+  QueryExecutor beginExclusive() {
+    return _delegate.beginExclusive();
+  }
+
   Future<c.Hlc?> getLastModified(
       {String? onlyNodeId, String? exceptNodeId}) async {
     return _delegate.getLastModified(
